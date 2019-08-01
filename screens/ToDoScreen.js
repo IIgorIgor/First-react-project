@@ -24,7 +24,6 @@ export default class ToDoScreen extends React.Component {
 
     state = {
         id: [],
-        atividade: '',
         isDialogVisible: false,
     }
 
@@ -40,7 +39,7 @@ export default class ToDoScreen extends React.Component {
         if (newToDo == '') {
             Alert.alert('É necessário digitar o nome da atividade');
         } else {
-            this.setState({ atividade: '', id: [...this.state.id, { id: nLength, title: newToDo, checked: false }] });
+            this.setState({ id: [...this.state.id, { id: nLength, title: newToDo, checked: false }] });
         }
         console.log(this.state.id);
     }
@@ -96,24 +95,6 @@ export default class ToDoScreen extends React.Component {
         );
     }
 }
-
-/*
-<KeyboardAvoidingView style={styles.insertContainer} visibl behavior="padding" enabled>
-                    <TextInput
-                        label='Nome da atividade'
-                        value={this.state.atividade}
-                        onChangeText={atividade => this.setState({ atividade })}
-                        style={styles.atividadeInput}
-                    />
-                    <Button
-                        mode='contained'
-                        style={styles.atividadeButton}
-                        onPress={this._OnAddAtividade}
-                    >
-                        Adicionar Atividade
-                    </Button>
-                </KeyboardAvoidingView>
-*/
 
 const styles = StyleSheet.create({
     container: {
