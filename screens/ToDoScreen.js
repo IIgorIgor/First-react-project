@@ -35,11 +35,16 @@ export default class ToDoScreen extends React.Component {
     }
 
     _OnAddAtividade = (newToDo) => {
-        let nLength = this.state.id.length;
-        if (newToDo == '') {
+        let tasks = this.state.id;
+        let newId = 0;
+        let nLength = tasks.length;
+        if (nLength) {
+            newId = tasks[nLength-1].id + 1;
+        }        
+        if (!newToDo) {
             Alert.alert('É necessário digitar o nome da atividade');
         } else {
-            this.setState({ id: [...this.state.id, { id: nLength, title: newToDo, checked: false }] });
+            this.setState({ id: [...this.state.id, { id: newId, title: newToDo, checked: false }] });
         }
         console.log(this.state.id);
     }
