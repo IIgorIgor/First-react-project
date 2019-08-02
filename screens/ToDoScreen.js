@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     },
     fab: {
         position: 'absolute',
-        margin: 15,
+        margin: 16,
         right: 0,
         bottom: 0,
     },
